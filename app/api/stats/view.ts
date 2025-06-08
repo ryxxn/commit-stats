@@ -15,7 +15,7 @@ export const getSVG = ({
   topLang,
   issueCount,
 }: Props) => `
-<svg width="512" height="250" xmlns="http://www.w3.org/2000/svg">
+<svg width="680" height="180" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <filter id="glass" x="-20%" y="-20%" width="140%" height="140%">
       <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur" />
@@ -107,31 +107,31 @@ export const getSVG = ({
     }
   </style>
 
-  <rect width="100%" height="100%" class="background"/>
+  <g transform="translate(0, 0)">
+    <rect x="20" y="20" width="200" height="60" fill="url(#card1)" class="card-border"/>
+    <text x="30" y="40" class="label">🏆 Commit Rank</text>
+    <text x="30" y="65" font-family="monospace" font-weight="bold" font-size="16" fill="url(#value1)">${getCommitRank(commitCount)}</text>
 
-  <rect x="20" y="20" width="220" height="60" fill="url(#card1)" class="card-border"/>
-  <text x="30" y="40" class="label">🏆 Commit Rank</text>
-  <text x="30" y="65" font-family="monospace" font-weight="bold" font-size="16" fill="url(#value1)">${getCommitRank(commitCount)}</text>
+    <rect x="240" y="20" width="200" height="60" fill="url(#card2)" class="card-border"/>
+    <text x="250" y="40" class="label">📝 Total Commits</text>
+    <text x="250" y="65" font-family="monospace" font-weight="bold" font-size="16" fill="url(#value2)">${commitCount.toLocaleString()}</text>
 
-  <rect x="260" y="20" width="220" height="60" fill="url(#card2)" class="card-border"/>
-  <text x="270" y="40" class="label">📝 Total Commits</text>
-  <text x="270" y="65" font-family="monospace" font-weight="bold" font-size="16" fill="url(#value2)">${commitCount.toLocaleString()}</text>
+    <rect x="460" y="20" width="200" height="60" fill="url(#card3)" class="card-border"/>
+    <text x="470" y="40" class="label">📦 Total PRs</text>
+    <text x="470" y="65" font-family="monospace" font-weight="bold" font-size="16" fill="url(#value3)">${prCount.toLocaleString()}</text>
 
-  <rect x="20" y="90" width="220" height="60" fill="url(#card3)" class="card-border"/>
-  <text x="30" y="110" class="label">📦 Total PRs</text>
-  <text x="30" y="135" font-family="monospace" font-weight="bold" font-size="16" fill="url(#value3)">${prCount.toLocaleString()}</text>
+    <rect x="20" y="100" width="200" height="60" fill="url(#card4)" class="card-border"/>
+    <text x="30" y="120" class="label">📮 Issues Created</text>
+    <text x="30" y="145" font-family="monospace" font-weight="bold" font-size="16" fill="url(#value4)">${issueCount}</text>
 
-  <rect x="260" y="90" width="220" height="60" fill="url(#card4)" class="card-border"/>
-  <text x="270" y="110" class="label">📮 Issues Created</text>
-  <text x="270" y="135" font-family="monospace" font-weight="bold" font-size="16" fill="url(#value4)">${issueCount}</text>
+    <rect x="240" y="100" width="200" height="60" fill="url(#card5)" class="card-border"/>
+    <text x="250" y="120" class="label">⭐ Stars Earned</text>
+    <text x="250" y="145" font-family="monospace" font-weight="bold" font-size="16" fill="url(#value5)">${stars}</text>
 
-  <rect x="20" y="160" width="220" height="60" fill="url(#card5)" class="card-border"/>
-  <text x="30" y="180" class="label">🧠 Top Language</text>
-  <text x="30" y="205" font-family="monospace" font-weight="bold" font-size="16" fill="url(#value5)">${topLang}</text>
-
-  <rect x="260" y="160" width="220" height="60" fill="url(#card6)" class="card-border"/>
-  <text x="270" y="180" class="label">⭐ Stars Earned</text>
-  <text x="270" y="205" font-family="monospace" font-weight="bold" font-size="16" fill="url(#value6)">${stars}</text>
+    <rect x="460" y="100" width="200" height="60" fill="url(#card6)" class="card-border"/>
+    <text x="470" y="120" class="label">🧠 Top Language</text>
+    <text x="470" y="145" font-family="monospace" font-weight="bold" font-size="16" fill="url(#value6)">${topLang}</text>
+  </g>
 </svg>
 
 `;
